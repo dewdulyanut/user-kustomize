@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: example-service
+  name: dew-hw3-go-user
   labels:
-    app.kubernetes.io/name: example-service
-    app.kubernetes.io/instance: example-service
+    app.kubernetes.io/name: dew-hw3-go-user
+    app.kubernetes.io/instance: dew-hw3-go-user
 spec:
   type: ClusterIP
   ports:
@@ -13,5 +13,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app.kubernetes.io/name: example-service
-    app.kubernetes.io/instance: example-service
+    app.kubernetes.io/name: dew-hw3-go-user
+    app.kubernetes.io/instance: dew-hw3-go-user

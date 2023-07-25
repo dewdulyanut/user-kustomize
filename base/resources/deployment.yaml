@@ -1,32 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-service
+  name: dew-hw3-go-user
   labels:
-    app.kubernetes.io/name: example-service
-    app.kubernetes.io/instance: example-service
+    app.kubernetes.io/name: dew-hw3-go-user
+    app.kubernetes.io/instance: dew-hw3-go-user
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: example-service
-      app.kubernetes.io/instance: example-service
+      app.kubernetes.io/name: dew-hw3-go-user
+      app.kubernetes.io/instance: dew-hw3-go-user
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: example-service
-        app.kubernetes.io/instance: example-service
+        app.kubernetes.io/name: dew-hw3-go-user
+        app.kubernetes.io/instance: dew-hw3-go-user
     spec:
       containers:
-        - name: example-service
-          image: asia.gcr.io/poc-innovation-iot/example-service:TAG
+        - name: dew-hw3-go-user
+          image: asia.gcr.io/poc-innovation-iot/dew-hw3-go-user:TAG
           imagePullPolicy: IfNotPresent
           envFrom:
             - secretRef:
-                name: example-service-secret-env
+                name: dew-hw3-go-user-secret-env
           volumeMounts:
               - mountPath: /config/config.yaml
-                name: example-service-configmap-file
+                name: dew-hw3-go-user-configmap-file
                 subPath: config.yaml
           ports:
             - name: http
@@ -52,9 +52,9 @@ spec:
               cpu: 32m
               memory: 32Mi
       volumes:
-        - name: example-service-secret-file
+        - name: dew-hw3-go-user-secret-file
           secret:
-            secretName: example-service-secret-file
-        - name: example-service-configmap-file
+            secretName: dew-hw3-go-user-secret-file
+        - name: dew-hw3-go-user-configmap-file
           configMap:
-            name: example-service-configmap-file
+            name: dew-hw3-go-user-configmap-file

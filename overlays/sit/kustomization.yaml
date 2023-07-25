@@ -5,7 +5,7 @@ resources:
 - ../../base
 
 images:
-- name: asia.gcr.io/poc-innovation-iot/example-service
+- name: asia.gcr.io/poc-innovation-iot/dew-hw3-go-user
   newTag: 103eda26
 
 
@@ -13,10 +13,10 @@ configMapGenerator:
 - behavior: merge
   files:
   - configs/config.yaml
-  name: example-service-configmap-file
+  name: dew-hw3-go-user-configmap-file
 
 secretGenerator:
 - behavior: merge
   envs:
   - secrets/secret.env
-  name: example-service-secret-env
+  name: dew-hw3-go-user-secret-env
