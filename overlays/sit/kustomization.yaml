@@ -7,6 +7,8 @@ resources:
 images:
 - name: asia.gcr.io/poc-innovation-iot/dew-hw3-go-user
   newTag: 103eda26
+- name: asia.gcr.io/poc-innovation-iot/dew-hw3-user
+  newTag: 8a2fe68a
 
 
 configMapGenerator:
