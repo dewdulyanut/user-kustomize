@@ -44,13 +44,13 @@ spec:
               port: http
             timeoutSeconds: 10
             initialDelaySeconds: 10
-          # resources:
-          #   limits:
-          #     cpu: 64m
-          #     memory: 64Mi
-          #   requests:
-          #     cpu: 32m
-          #     memory: 32Mi
+          resources:
+            limits:
+              cpu: 0.2
+              memory: 16Mi
+            requests:
+              cpu: 0.1
+              memory: 16Mi
       volumes:
         - name: dew-hw3-go-user-secret-file
           secret:
