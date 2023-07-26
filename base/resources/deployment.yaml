@@ -30,27 +30,27 @@ spec:
                 subPath: config.yaml
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 8008
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
+              path: /liveness
               port: http
             timeoutSeconds: 10
             initialDelaySeconds: 10
           readinessProbe:
             httpGet:
-              path: /
+              path: /readiness
               port: http
             timeoutSeconds: 10
             initialDelaySeconds: 10
-          resources:
-            limits:
-              cpu: 64m
-              memory: 64Mi
-            requests:
-              cpu: 32m
-              memory: 32Mi
+          # resources:
+          #   limits:
+          #     cpu: 64m
+          #     memory: 64Mi
+          #   requests:
+          #     cpu: 32m
+          #     memory: 32Mi
       volumes:
         - name: dew-hw3-go-user-secret-file
           secret:
